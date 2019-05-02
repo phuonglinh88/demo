@@ -1,0 +1,98 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.form-dark .font-small {
+    font-size: 0.8rem;
+}
+
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+    font-size: 0.8rem;
+}
+
+.form-dark [type="checkbox"] + label:before {
+    top: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.form-dark .md-form label {
+    color: #fff;
+}
+
+.form-dark input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid rgb(51, 181, 229);
+    -webkit-box-shadow: 0 1px 0 0 rgb(51, 181, 229);
+    box-shadow: 0 1px 0 0 rgb(51, 181, 229);
+}
+
+.form-dark input[type=text]:focus:not([readonly]) + label {
+    color: #fff;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid rgb(51, 181, 229);
+    -webkit-box-shadow: 0 1px 0 0 rgb(51, 181, 229);
+    box-shadow: 0 1px 0 0 rgb(51, 181, 229);
+}
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+    color: #fff;
+}
+
+.form-dark input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    z-index: 0;
+    border: 1.5px solid #fff;
+    border-radius: 1px;
+    margin-top: 2px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.form-dark input[type="checkbox"]:checked + label:before {
+    top: -4px;
+    left: -3px;
+    width: 12px;
+    height: 22px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent rgb(51, 181, 229) rgb(51, 181, 229) transparent;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+.form-dark input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+.form-dark input.is-invalid {
+    border-bottom: 1px solid #ef5350 !important;
+    -webkit-box-shadow: 0 1px 0 0 #ef5350 !important;
+    box-shadow: 0 1px 0 0 #ef5350 !important;
+}
+
+.form-dark > .card > div {
+    background-color: rgba(10, 11, 12, 0.7);
+}
+
+input{
+    color: White !important;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="https://nhubang8x.github.io/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://nhubang8x.github.io/css/mdb.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/mdb.min.js" defer></script>
+    <link th:href="@{/css/mystyle.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table class="table">
+    <thead class="black white-text">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody th:if="${list != null || !#lists.isEmpty(list)}">
+        <tr  th:each="user : ${list}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}">Mark</td>
+            <td th:text="${user.password}">Otto</td>
+            <td><a th:href="@{'/change/'+ ${user.id}}" class="btn btn-outline-info waves-effect ml-auto">Change Password</a> </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

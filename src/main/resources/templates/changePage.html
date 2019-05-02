@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="https://nhubang8x.github.io/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://nhubang8x.github.io/css/mdb.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://nhubang8x.github.io/js/mdb.min.js" defer></script>
+    <link th:href="@{/css/mystyle.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="row mt-3 mb-3 justify-content-center">
+    <form method="POST" th:object="${changePass}" th:action="@{'/change/' + ${changePass.id}}">
+        <!--Section: Live preview-->
+        <section class="form-dark">
+            <!--Form without header-->
+            <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table8.jpg'); width: 28rem;">
+                <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3 class="white-text mb-5 mt-4 font-weight-bold">Change <span class="text-info font-weight-bold">password</span></h3>
+                    </div>
+                    <!--Body-->
+                    <div class="md-form">
+                        <input type="text" id="textInput" class="form-control mb-4" th:field="*{id}" readonly>
+                        <label for="textInput">Username</label>
+                    </div>
+                    <div class="md-form">
+                        <input type="password" id="defaultRegisterFormEmail" class="form-control mb-4" th:field="*{oldPassword}" th:classappend="${#fields.hasErrors('oldPassword')} ? 'is-invalid' : ''">
+                        <label for="defaultRegisterFormEmail">Password</label>
+                        <em class="error invalid-feedback" th:if="${#fields.hasErrors('oldPassword')}" th:errors="*{oldPassword}"></em>
+                    </div>
+                    <div class="md-form">
+                        <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" th:field="*{newPassword}"
+                               th:classappend="${#fields.hasErrors('newPassword')} ? 'is-invalid' : ''">
+                        <label for="defaultRegisterFormPassword">New Password</label>
+                        <em class="error invalid-feedback" th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}"></em>
+                    </div>
+                    <div class="md-form">
+                        <input type="password" id="passwdInput" class="form-control mb-4" th:field="*{confirmNewPassword}"
+                               th:classappend="${#fields.hasErrors('confirmNewPassword')} ? 'is-invalid' : ''">
+                        <label for="passwdInput">Confirm New Password</label>
+                        <em class="error invalid-feedback" th:if="${#fields.hasErrors('confirmNewPassword')}" th:errors="*{confirmNewPassword}"></em>
+                    </div>
+                    <!--Grid row-->
+                    <div class="row d-flex align-items-center mb-4">
+                        <!--Grid column-->
+                        <div class="text-center mb-3 col-md-12">
+                            <input type="submit" class="btn btn-info btn-block btn-rounded z-depth-1" value="Change"/>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+            </div>
+            <!--/Form without header-->
+
+        </section>
+        <!--Section: Live preview-->
+    </form>
+</div>
+</body>
+</html>
